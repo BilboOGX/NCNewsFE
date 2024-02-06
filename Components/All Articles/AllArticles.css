@@ -1,13 +1,18 @@
 body{
-    background-color: rgb(240, 222, 199);
-    color: black;
+    background-color: rgb(163, 161, 161);
+    color: rgb(5, 5, 5);
+    font-family: 'TheGoodMonolith', sans-serif;
 }
 
 .article-img{
-height: 20vh;
-margin-bottom: 5%;
-border: solid red;
-border-radius: 10%;
+    height: 25vh;
+    width: 15vw; 
+    margin-bottom: 5%; 
+    border-radius: 10%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .articleList
@@ -17,14 +22,39 @@ border-radius: 10%;
     list-style-type:none;
     padding:0px;
     margin:0px;
-    /* border: solid rgb(0, 0, 0) 5px; */
+    
+    
 }
 .articleList2
 {
-    border: dashed rgb(0, 0, 0) 2px;
+    border: solid rgb(0, 0, 0) 2px;
     border-radius: 10%;
-    padding-left:14px;
+    padding: 10px;
     margin: 10px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    
+
+    
+}
+
+.articleList2 a:link { 
+    text-decoration: none; 
+  } 
+.articleList2 a:visited { 
+    text-decoration: none; 
+  } 
+.articleList2 a:hover { 
+    text-decoration: none;
+}
+.articleList2 a:active { 
+    text-decoration: none; 
+  }
+
+.articleList2 a {
+text-align: left;
+color: rgb(0, 0, 0);
 }
