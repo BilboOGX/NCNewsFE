@@ -11,3 +11,7 @@ export function fetchArticles(){
 export function fetchArticleByID(article_id){
     return ncapi.get(`articles/${article_id}`)
 }
+
+export function getAllComments(article_id){
+    return ncapi.get(`articles/${article_id}/comments`)
+}

@@ -4,7 +4,7 @@
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    height: 100vh;
+    height: 80vh;
     }
     
     
@@ -22,20 +22,29 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
+    overflow: auto;
+    overflow-x: hidden;
+
 }
-.div2 { grid-area: 1 / 4 / 3 / 7; text-align: center;
+.div2 { grid-area: 1 / 4 / 3 / 7; 
+    text-align: center;
     border: solid rgb(0, 0, 0);
     background-color: white;
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
-    border-radius: 20%;
+    overflow: hidden;
 }
-.div3 { grid-area: 3 / 4 / 6 / 7; text-align: center;
+.div3 { grid-area: 3 / 4 / 6 / 7; 
+    text-align: center;
     border: solid rgb(0, 0, 0);
-    border-radius: 20%;
+   display: flex;
+    align-items: left;
     background-color: white;
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
+    overflow: auto;
+    overflow-x: hidden;
 }
+

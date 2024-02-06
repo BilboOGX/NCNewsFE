@@ -1,18 +1,22 @@
 import './article.css'
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { fetchArticleByID } from "../../Axios Requests/requests";
 import { useEffect, useState } from "react";
+import GetComments from '../Comments/comments';
 
 export default function SingleArticle(){
 const { article_id } = useParams()
 const [article, setArticle] = useState([])
+const [isLoading, setIsLoading] = useState(true)
 
 useEffect(() => {
     fetchArticleByID(article_id).then((response) => {
-        console.log(response.data.article)
       setArticle(response.data.article);
+      setIsLoading(false)
     });
   }, []);
+  if(isLoading) return <p>Article Loading...</p>
+  
   return (
     <div className='parent'>
     <div className="div1">
@@ -27,8 +31,8 @@ useEffect(() => {
       {/* <img className='article-image'src={article.article_img_url}/> */}
     </div>
     <div class="div2"> ADD COMMENT FORM HERE </div>
-    <div class="div3"> ALL COMMENTS FOR ARTICLE HERE
-    <p>Total Comment Count: {article.number_of_comments}</p>
+    <div class="div3">
+    <GetComments />
     </div>
 </div>
   );
