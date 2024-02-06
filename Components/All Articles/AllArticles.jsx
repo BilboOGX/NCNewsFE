@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 import SingleArticle from "../Article ID/article";
 
 export default function ArticleList(){
-
-    const [articles, setArticles] = useState([]);
+const [articles, setArticles] = useState([]);
+const [isLoading, setIsLoading] = useState(true)
             useEffect(() => {
             fetchArticles().then((response) => {
                 setArticles(response.data.article)
+                setIsLoading(false)
             })
         
     }, []);
+    if(isLoading) return <p>Loading Articles...</p>
     return (
     <>
         <section>
