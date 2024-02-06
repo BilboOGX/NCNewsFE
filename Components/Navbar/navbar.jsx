@@ -5,8 +5,8 @@ export default function Navbar() {
     return (
       <header className='navbar-container'>
         <nav className="navbar">
-            <a>Home</a>
-          {/* <Link to="/articles">Home</Link> */}
+            <Link to="/home">Home</Link>
+            <Link to="/articles">All Articles</Link>
   
           <div className="dropdown">
             <button className="dropbtn">
