@@ -7,6 +7,7 @@ import { Header } from '../Components/Header/header'
 import HomePage from '../Components/Home/home'
 import SingleArticle from '../Components/Article ID/article'
 import GetComments from '../Components/Comments/comments'
+import Count from '../Components/VoteCount/vote'
 
 function App() {
 

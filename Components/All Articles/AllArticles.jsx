@@ -28,7 +28,7 @@ const [isLoading, setIsLoading] = useState(true)
                         <p>{article.title} </p>
                         <p>Topic: {article.topic}</p>
                         <p>Author: {article.author}</p>
-                        <p>Created On: {article.created_at}</p>
+                        <p>Created On: {Date(article.created_at)}</p>
                         <p>Votes: {article.votes} </p>
                         {/* <img className='article-img' src={article.article_img_url}/> */}
                         </Link>
