@@ -18,7 +18,14 @@ useEffect(() => {
 if(isLoading) return <p>Comments Loading...</p>
 
 return (
-    <>  <section>
+    
+    comments.length === 0 ? 
+    (<li className="commentList3"> <p>No Comments To Display</p> 
+    <p>Be The First and Comment Above</p></li>) : 
+    (
+    <> 
+    <section>
+    
         <ul className='commentList'>
             {comments.map((comment) => {
             
@@ -26,7 +33,7 @@ return (
                     <li className='commentList2'>
                        <p>Author: {comment.author}</p>
                        <p>Votes: {comment.votes}</p>
-                       <p>{comment.created_at}</p>
+                       <p>{Date(comment.created_at)}</p>
                        <p>{comment.body}</p>
                        
                     </li>
@@ -35,6 +42,7 @@ return (
         </ul>
         </section>
     </>
+)
 )
     
 }

@@ -15,3 +15,7 @@ export function fetchArticleByID(article_id){
 export function getAllComments(article_id){
     return ncapi.get(`articles/${article_id}/comments`)
 }
+
+export function updateVotes(article_id, newLikeCount){
+    return ncapi.patch(`articles/${article_id}`, {inc_votes: newLikeCount});
+}
