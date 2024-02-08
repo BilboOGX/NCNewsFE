@@ -25,8 +25,7 @@ export default function Navbar() {
   
         <div className='navbar-right'>
           <div className='sign-in'>
-          <a className="log-in" href="#login">
-            Login </a>
+          <Link to="/users">Login</Link>
           <a className="sign-up" href="#sign-up">
             Signup </a>
       

@@ -1,7 +1,8 @@
 body{
-    background-color: rgb(163, 161, 161);
+    background-color: rgb(163, 163, 163);
     color: rgb(5, 5, 5);
     font-family: 'TheGoodMonolith', sans-serif;
+    overflow-y: hidden;
 }
 
 .article-img{

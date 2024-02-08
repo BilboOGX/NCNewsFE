@@ -28,3 +28,26 @@ margin: 5px;
     border: dashed black;
     width: 100vw;
 }
+
+.commentForm{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.commentForm textArea {
+    width: 95%;
+    height: 75%;
+    border: dashed;
+    margin: 5px;
+
+}
+
+.commentForm button {
+    width: 20vw;
+}
+
+.commentSuccess{
+    text-align: center;
+    width: 95%;
+    height: 75%
+}

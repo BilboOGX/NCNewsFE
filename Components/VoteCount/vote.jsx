@@ -27,11 +27,6 @@ export default function Count(){
             console.error('Vote Not Registered')
             setLikeCount(likeCount)
         })
-
-        
-        
-      
-
     }
     useEffect(() => {
         fetchArticleByID(article_id).then((response) => {
