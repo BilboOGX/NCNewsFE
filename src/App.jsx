@@ -8,6 +8,8 @@ import HomePage from '../Components/Home/home'
 import SingleArticle from '../Components/Article ID/article'
 import GetComments from '../Components/Comments/comments'
 import Count from '../Components/VoteCount/vote'
+import UserList from '../Components/GetUsers/getusers'
+
 
 function App() {
 
@@ -21,6 +23,7 @@ function App() {
         <Route path='/articles' element={<ArticleList/>}/>
         <Route path='/articles/:article_id' element={<SingleArticle/>}/>
         <Route path='/articles/:article_id/comments' element={<GetComments/>}/>
+        <Route path='/users' element={<UserList/>}/>
       </Routes>
      
       

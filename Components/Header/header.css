@@ -3,3 +3,9 @@ h1{
     text-align: center;
     font-family: 'TheGoodMonolith', sans-serif;
 }
+
+.login{
+    text-align: right;
+    margin-right: 2.5%;
+    
+}
