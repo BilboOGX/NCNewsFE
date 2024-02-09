@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from '../Components/Navbar/navbar'
@@ -7,7 +7,6 @@ import { Header } from '../Components/Header/header'
 import HomePage from '../Components/Home/home'
 import SingleArticle from '../Components/Article ID/article'
 import GetComments from '../Components/Comments/comments'
-import Count from '../Components/VoteCount/vote'
 import UserList from '../Components/GetUsers/getusers'
 
 

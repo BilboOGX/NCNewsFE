@@ -14,12 +14,10 @@ export default function Navbar() {
               <i className="fa fa-caret-down"></i>
             </button>
             <div className="dropdown-content">
-            <a>Football</a>
-            <a>Cooking</a>
-            <a>Coding</a>
-              {/* <Link to="/topics/football">Football</Link>
-              <Link to="/topics/cooking">Cooking</Link>
-              <Link to="/topics/coding">Coding</Link> */}
+             <Link to="/articles?topic=coding">Coding</Link>
+             <Link to="/articles?topic=cooking">Cooking</Link>
+             <Link to="/articles?topic=football">Football</Link>
+
             </div>
           </div>
   
