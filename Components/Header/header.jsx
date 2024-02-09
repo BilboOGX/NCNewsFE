@@ -10,7 +10,7 @@ export function Header(){
     return (
       <>
       <h1>NC News 📰! </h1> 
-      <p className='login'> Logged In: {user.username} </p>
+      {/* <p className='login'> Logged In: {user.username} </p> */}
       </>
     )
     

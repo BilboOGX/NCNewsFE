@@ -24,6 +24,7 @@ margin: 5px;
     margin: 0;
     padding: 0;
     width: 100%;
+
 }
 .commentList3{
     display: flex;
@@ -33,7 +34,8 @@ margin: 5px;
     background-color: rgb(255, 255, 255);
     margin: 10px;
     border: dashed rgb(0, 0, 0);
-    width: 100vw;
+    width: 96%;
+    height: 95%;
 }
 
 .commentForm{
