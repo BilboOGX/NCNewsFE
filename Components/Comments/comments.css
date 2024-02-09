@@ -1,12 +1,14 @@
 .commentList2
 {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
     background-color: rgb(255, 255, 255);
+    width: 98%;
+    height: 75%;
     border: dashed;
-    margin: 10px;
+    margin: 5px;
+    box-sizing: border-box;
 }
 
 .commentList2 p {
@@ -14,9 +16,14 @@ text-align: left;
 margin: 5px;
 }
 
+.commentList2 button{
+    width: 10vw;
+}
+
 .commentList{
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 .commentList3{
     display: flex;
@@ -25,7 +32,7 @@ margin: 5px;
     justify-content: center;
     background-color: rgb(255, 255, 255);
     margin: 10px;
-    border: dashed black;
+    border: dashed rgb(0, 0, 0);
     width: 100vw;
 }
 

@@ -2,7 +2,9 @@ body{
     background-color: rgb(163, 163, 163);
     color: rgb(5, 5, 5);
     font-family: 'TheGoodMonolith', sans-serif;
-    overflow-y: hidden;
+
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .article-img{

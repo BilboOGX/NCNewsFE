@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom"
 import { addComment, fetchArticleByID, getAllComments } from "../../Axios Requests/requests"
 import { UserContext } from "../Context/users"
 import { useContext } from "react"
-import GetComments from '../Comments/comments'
 
 export default function CommentForm(){
     const [ articleData, setArticleData] = useState({})
@@ -11,27 +10,31 @@ export default function CommentForm(){
     const { article_id } = useParams()
     const { user } = useContext(UserContext)
     const [ successfulPost, setSuccessfulPost] = useState(false)
+    const [ comments, setComments] = useState({})
 
-function handleSubmit(event){
-    event.preventDefault();
-    addComment(article_id, body, user.username)
-    .then(response => {
-    setSuccessfulPost(true)
-    setBody('')
-    setTimeout(() => setSuccessfulPost(false), 2000)
-  })
-  .catch(error => {
-    <p>Comment Submission Failed! Please Try Again.</p>
-  });
-    }
+        function handleSubmit(event){
+            event.preventDefault();
+            addComment(article_id, body, user.username)
+                .then(response => {
+                    setSuccessfulPost(true)
+                    setBody('')
+                    setTimeout(() => setSuccessfulPost(false), 2000)
+                })
+                .catch(error => {alert('Submission Failed! Log in and please try again.')
+                });
+        }
 
-    useEffect(() => {
-        fetchArticleByID(article_id).then((response) => {
-        setArticleData(response.data)
-        }).catch(error => {
-            console.log(error)
-    }, []);
-    })
+        useEffect(() => {
+            fetchArticleByID(article_id)
+                .then(response => {
+                    setArticleData(response.data)
+                    getAllComments(article_id)})
+                .then((response) => {
+                    setComments(response.data)
+                })
+                .catch((error) => {
+                });
+        }, [comments]);
 
     if (successfulPost) return <p className="commentSuccess">Comment Submitted Successfully</p>
     
