@@ -17,9 +17,9 @@ const { user } = useContext(UserContext)
 
 const handleDelete = (comment_id, author) => {
     if (author === user.username) {
-        alert('Comment Successfully Deleted')
         deleteComment(comment_id)
         .then(() => {
+        alert('Comment Successfully Deleted')
         })
         .catch((error) => {
           console.error(error);
@@ -35,7 +35,7 @@ useEffect(() => {
         setComments(response.data)
         setIsLoading(false)
     });
-}, [])
+}, [article_id])
 if(isLoading) return <p>Comments Loading...</p>
 
 return (
@@ -59,9 +59,10 @@ return (
                        <p>Votes: {comment.votes}</p>
                        <p>{Date(comment.created_at)}</p>
                        <p>{comment.body}</p>
+                       {user.username === comment.author ? (
                        <button onClick={() => handleDelete(comment.comment_id, comment.author)}>
                             Delete Comment
-                        </button>
+                        </button>) : (null)}
                     </li>
                 )
             })}

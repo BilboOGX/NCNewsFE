@@ -1,20 +1,42 @@
-import { fetchArticles } from "../../Axios Requests/requests";
+import { fetchArticles, fetchByTopic } from "../../Axios Requests/requests";
 import { useEffect, useState } from "react";
 import './AllArticles.css'
 import { Link } from "react-router-dom";
-import SingleArticle from "../Article ID/article";
+import { useSearchParams } from "react-router-dom";
 
 export default function ArticleList(){
 const [articles, setArticles] = useState([]);
-const [isLoading, setIsLoading] = useState(true)
-            useEffect(() => {
-            fetchArticles().then((response) => {
-                setArticles(response.data.article)
-                setIsLoading(false)
+const [isLoading, setIsLoading] = useState(true);
+const [searchParams] = useSearchParams();
+
+    useEffect(() => {
+        const topic = searchParams.get('topic');
+
+        if (topic) {
+            fetchByTopic(topic)
+            .then((response) => {
+                setArticles(response.data.article);
+                setIsLoading(false);
             })
+            .catch((error) => {
+                console.error('Failed to load', error)
+                setIsLoading(false);
+            });
+        } else { 
+            fetchArticles()
+            .then((response) => {
+                setArticles(response.data.article);
+                setIsLoading(false);
+            })
+            .catch((error) => {
+                console.error('Failed to load', error);
+                setIsLoading(false);
+          });
         
-    }, []);
-    if(isLoading) return <p className="loading">Loading Articles...</p>
+    }}, [searchParams]);
+
+    if(isLoading) { return <p className="loading">Loading Articles...</p> }
+    
     return (
     <>
         <section>
@@ -30,7 +52,6 @@ const [isLoading, setIsLoading] = useState(true)
                         <p>Author: {article.author}</p>
                         <p>Created On: {Date(article.created_at)}</p>
                         <p>Votes: {article.votes} </p>
-                        {/* <img className='article-img' src={article.article_img_url}/> */}
                         </Link>
                     </li>
                 )
@@ -39,5 +60,6 @@ const [isLoading, setIsLoading] = useState(true)
         </section>
         </>
     )
-}
+        }
+
 

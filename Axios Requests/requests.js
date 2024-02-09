@@ -5,8 +5,13 @@ const ncapi = axios.create({
 });
 
 export function fetchArticles(){
-    return ncapi.get('articles')
+    return ncapi.get(`articles`)
 }
+
+export function fetchByTopic(topic){
+    return ncapi.get(`articles?topic=${topic}`)
+}
+
 
 export function fetchArticleByID(article_id){
     return ncapi.get(`articles/${article_id}`)
