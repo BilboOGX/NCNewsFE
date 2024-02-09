@@ -10,13 +10,15 @@ export default function SingleArticle(){
 const { article_id } = useParams()
 const [article, setArticle] = useState([])
 const [isLoading, setIsLoading] = useState(true)
+const [comments, setComments] = useState([])
 
 useEffect(() => {
     fetchArticleByID(article_id).then((response) => {
       setArticle(response.data.article);
       setIsLoading(false)
     });
-  }, []);
+  }, [article_id]);
+  
   if(isLoading) return <p>Article Loading...</p>
 
   return (

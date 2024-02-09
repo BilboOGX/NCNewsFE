@@ -39,14 +39,14 @@
 .div3 { grid-area: 3 / 4 / 6 / 7; 
     text-align: center;
     border: solid rgb(0, 0, 0);
-    display: flex;
-    align-items: cen;
-    background-color: white;
+    display: flexbox;
+    background-color: rgb(255, 255, 255);
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
     overflow: auto;
     overflow-x: hidden;
+    flex-grow: 1;
 }
 .articleContent {
     margin-left: 2.5%;

@@ -14,7 +14,7 @@ const [isLoading, setIsLoading] = useState(true)
             })
         
     }, []);
-    if(isLoading) return <p>Loading Articles...</p>
+    if(isLoading) return <p className="loading">Loading Articles...</p>
     return (
     <>
         <section>

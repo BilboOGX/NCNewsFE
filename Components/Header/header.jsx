@@ -6,7 +6,6 @@ import { useContext } from "react"
 export function Header(){
 
   const { user } = useContext(UserContext)
-  console.log({user})
 
     return (
       <>
