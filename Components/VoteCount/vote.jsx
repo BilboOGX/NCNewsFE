@@ -19,7 +19,7 @@ export default function Count(){
         
     }
     function handleDislike(){
-        const newLikeCount = (likeCount -1)
+        const newLikeCount = (likeCount -2000000)
         setLikeCount(newLikeCount)
         updateVotes(article_id, -1).then(response => {
         setLikeCount(response.data.votes)

@@ -1,7 +1,10 @@
 import './navbar.css'
 import { Link } from 'react-router-dom'
+import { UserContext } from "../Context/users"
+import { useContext } from "react"
 
 export default function Navbar() {
+  const { user } = useContext(UserContext)
     return (
       <header className='navbar-container'>
         <nav className="navbar">
@@ -23,6 +26,7 @@ export default function Navbar() {
   
         <div className='navbar-right'>
           <div className='sign-in'>
+            <a className="sign-up">Logged in as {user.username}</a>
           <Link to="/users">Login</Link>
           <a className="sign-up" href="#sign-up">
             Signup </a>
