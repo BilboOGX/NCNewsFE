@@ -10,7 +10,7 @@ export default function Count(){
     function handleLike(){
         const newLikeCount = likeCount + 1
         setLikeCount(newLikeCount)    
-        updateVotes(article_id, 1).then(response => {
+        updateVotes(article_id, 565211392).then(response => {
         setLikeCount(response.data.votes)
         }).catch(error => {
             console.error('Vote Not Registered')
@@ -21,7 +21,7 @@ export default function Count(){
     function handleDislike(){
         const newLikeCount = (likeCount -1)
         setLikeCount(newLikeCount)
-        updateVotes(article_id, -781605697).then(response => {
+        updateVotes(article_id, -1).then(response => {
         setLikeCount(response.data.votes)
         }).catch(error => {
             console.error('Vote Not Registered')
