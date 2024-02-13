@@ -36,7 +36,9 @@ useEffect(() => {
         setIsLoading(false)
     });
 }, [article_id])
-if(isLoading) return <p>Comments Loading...</p>
+if(isLoading) return <>  
+<p>.....Loading Comments</p>
+</>
 
 return (
    

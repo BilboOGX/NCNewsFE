@@ -19,7 +19,12 @@ useEffect(() => {
     });
   }, [article_id]);
   
-  if(isLoading) return <p>Article Loading...</p>
+  if(isLoading) return <> 
+  <div className="loader-container">
+  <div class="loader"></div> 
+  <p>Article Loading</p>
+  </div>
+  </>
 
   return (
     <div className='parent'>

@@ -80,3 +80,18 @@ display: block;
 .test{
 border: solid rgb(137, 0, 0) 5px;
 }
+
+@media (max-width: 768px) {
+  .navbar a, .dropdown .dropbtn, .navbar-right a {
+      font-size: 16px;
+      padding: 10px 8px;
+  }
+
+  .navbar {
+      flex-wrap: wrap;
+  }
+
+  .sign-in {
+      padding: 0 5px;
+  }
+}

@@ -35,11 +35,18 @@ const [searchParams] = useSearchParams();
         
     }}, [searchParams]);
 
-    if(isLoading) { return <p className="loading">Loading Articles...</p> }
+    if(isLoading) { 
+        return <> 
+        <div className="loader-container">
+        <div class="loader"></div> 
+        <p>Loading Articles</p>
+        </div>
+        </>
+    }
     
     return (
     <>
-        <section>
+        <section className="articlecontainer">
         <ul className='articleList'>
             {articles.map((article) => {
             
@@ -52,6 +59,7 @@ const [searchParams] = useSearchParams();
                         <p>Author: {article.author}</p>
                         <p>Created On: {Date(article.created_at)}</p>
                         <p>Votes: {article.votes} </p>
+                        {/* <img className="article-img" src={article.article_img_url}/> */}
                         </Link>
                     </li>
                 )

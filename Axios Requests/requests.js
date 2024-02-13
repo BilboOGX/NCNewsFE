@@ -8,6 +8,11 @@ export function fetchArticles(){
     return ncapi.get(`articles`)
 }
 
+export function fetchRandomArticles(){
+    const randomNum = Math.floor(Math.random() * 30)
+    return ncapi.get(`articles/${randomNum}`)
+}
+
 export function fetchByTopic(topic){
     return ncapi.get(`articles?topic=${topic}`)
 }
