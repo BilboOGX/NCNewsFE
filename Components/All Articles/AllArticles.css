@@ -4,7 +4,7 @@ body{
     font-family: 'TheGoodMonolith', sans-serif;
 
     overflow: scroll;
-    overflow: hidden
+    overflow-x: hidden;
 }
 
 .article-img{
