@@ -87,8 +87,9 @@ margin: 5px;
     .commentForm textArea {
         width: 95%;
         height: 40%;
-        border: dashed;
-        margin: 5px;
+        margin-top: 5px;
+        margin-bottom: 1px;
+        
     
     }
     
