@@ -21,7 +21,7 @@ margin: 5px;
     width: 30%;
     align-items: center;
     justify-content: center;
-    
+
 
 }
 
@@ -51,9 +51,14 @@ margin: 5px;
 .commentForm textArea {
     width: 95%;
     height: 75%;
-    border: dashed;
+    border: solid;
     margin: 5px;
 
+}
+
+.commentForm button {
+    display: block;
+    margin: auto; 
 }
 
 .deleteButton {
@@ -69,6 +74,26 @@ margin: 5px;
 @media (max-width: 768px) {
     .commentList2 button{
         width: 50%;
+    }
+    .commentForm button {
+        display: block;
+        margin: auto; 
+    }
+    .commentForm{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .commentForm textArea {
+        width: 95%;
+        height: 40%;
+        border: dashed;
+        margin: 5px;
     
+    }
+    
+    .commentForm button {
+        display: block;
+        margin: auto; 
     }
 }
