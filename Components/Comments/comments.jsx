@@ -58,11 +58,12 @@ return (
                     
                     <li className='commentList2'>
                        <p>Author: {comment.author}</p>
-                       <p>Votes: {comment.votes}</p>
-                       <p>{Date(comment.created_at)}</p>
+                       
+                       {/* <p>{Date(comment.created_at)}</p> */}
                        <p>{comment.body}</p>
+                       <p>Votes: {comment.votes}</p>
                        {user.username === comment.author ? (
-                       <button onClick={() => handleDelete(comment.comment_id, comment.author)}>
+                       <button className="deleteButton" onClick={() => handleDelete(comment.comment_id, comment.author)}>
                             Delete Comment
                         </button>) : (null)}
                     </li>

@@ -1,12 +1,23 @@
 
 h1{
-    margin-top: 70px;
+    margin-top: 50px;
+    margin-bottom: 1%;
     text-align: center;
     font-family: 'TheGoodMonolith', sans-serif;
 }
 
+h6{
+    margin-top: 1px;
+    margin-bottom: 1%;
+    text-align: center;
+    font-family: 'TheGoodMonolith', sans-serif; 
+    width: 100%;
+}
+
 .login{
-    text-align: right;
+    text-align: center;
     margin-right: 2.5%;
+    margin-top: 1%;
+    margin-bottom: 5%;
     
 }

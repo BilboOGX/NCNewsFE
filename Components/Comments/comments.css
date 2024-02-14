@@ -9,6 +9,7 @@
     border: dashed;
     margin: 5px;
     box-sizing: border-box;
+    
 }
 
 .commentList2 p {
@@ -17,7 +18,11 @@ margin: 5px;
 }
 
 .commentList2 button{
-    width: 10vw;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    
+
 }
 
 .commentList{
@@ -51,12 +56,19 @@ margin: 5px;
 
 }
 
-.commentForm button {
-    width: 20vw;
+.deleteButton {
+    width: 100%;
 }
 
 .commentSuccess{
     text-align: center;
     width: 95%;
     height: 75%
+}
+
+@media (max-width: 768px) {
+    .commentList2 button{
+        width: 50%;
+    
+    }
 }
