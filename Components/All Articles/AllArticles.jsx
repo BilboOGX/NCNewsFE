@@ -59,7 +59,6 @@ const [searchParams] = useSearchParams();
                         <p>Author: {article.author}</p>
                         <p>Created On: {Date(article.created_at)}</p>
                         <p>Votes: {article.votes} </p>
-                        {/* <img className="article-img" src={article.article_img_url}/> */}
                         </Link>
                     </li>
                 )
