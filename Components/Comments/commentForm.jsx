@@ -4,7 +4,7 @@ import { addComment, fetchArticleByID, getAllComments } from "../../Axios Reques
 import { UserContext } from "../Context/users"
 import { useContext } from "react"
 
-export default function CommentForm(){
+export default function CommentForm({ articleId, addCommentOptimistically }){
     const [ articleData, setArticleData] = useState({})
     const [ body, setBody] = useState('')
     const { article_id } = useParams()
@@ -14,6 +14,14 @@ export default function CommentForm(){
 
         function handleSubmit(event){
             event.preventDefault();
+            const newComment = {
+                body: body,
+                author: user.username,
+
+                
+            }
+            addCommentOptimistically(newComment)
+
             addComment(article_id, body, user.username)
                 .then(response => {
                     setSuccessfulPost(true)
@@ -24,17 +32,17 @@ export default function CommentForm(){
                 });
         }
 
-        useEffect(() => {
-            fetchArticleByID(article_id)
-                .then(response => {
-                    setArticleData(response.data)
-                    getAllComments(article_id)})
-                .then((response) => {
-                    setComments(response.data)
-                })
-                .catch((error) => {
-                });
-        }, [comments]);
+        // useEffect(() => {
+        //     fetchArticleByID(article_id)
+        //         .then(response => {
+        //             setArticleData(response.data)
+        //             getAllComments(article_id)})
+        //         .then((response) => {
+        //             setComments(response.data)
+        //         })
+        //         .catch((error) => {
+        //         });
+        // }, [comments]);
 
     if (successfulPost) return <p className="commentSuccess">Comment Submitted Successfully</p>
     
@@ -46,7 +54,7 @@ export default function CommentForm(){
                 onChange={(event) => {
                 setBody(event.target.value)}}
                 required
-                placeholder="Leave A Your Comment..."
+                placeholder="Leave Your Comment..."
                 ></textarea>
             </label>
             

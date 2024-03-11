@@ -7,9 +7,8 @@ import { UserContext } from "../Context/users"
 import { useContext } from "react"
 
 
-export default function GetComments(){
+export default function GetComments({comments}){
 const { article_id } = useParams()
-const [comments, setComments] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 const { user } = useContext(UserContext)
 
@@ -32,7 +31,6 @@ const handleDelete = (comment_id, author) => {
 
 useEffect(() => {
     getAllComments(article_id).then((response) => {
-        setComments(response.data)
         setIsLoading(false)
     });
 }, [article_id])
@@ -58,8 +56,6 @@ return (
                     
                     <li className='commentList2'>
                        <p>Author: {comment.author}</p>
-                       
-                       {/* <p>{Date(comment.created_at)}</p> */}
                        <p>{comment.body}</p>
                        <p>Votes: {comment.votes}</p>
                        {user.username === comment.author ? (

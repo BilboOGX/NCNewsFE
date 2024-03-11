@@ -1,6 +1,6 @@
 import './article.css'
 import { Link, useParams } from "react-router-dom";
-import { fetchArticleByID } from "../../Axios Requests/requests";
+import { fetchArticleByID, getAllComments } from "../../Axios Requests/requests";
 import { useEffect, useState } from "react";
 import GetComments from '../Comments/comments';
 import Count from '../VoteCount/vote';
@@ -17,8 +17,16 @@ useEffect(() => {
       setArticle(response.data.article);
       setIsLoading(false)
     });
+
+    getAllComments(article_id).then(response => {
+      setComments(response.data)
+    });
   }, [article_id]);
   
+  const addCommentOptimistically = (newComment) => {
+    setComments(currentComments => [newComment, ...currentComments]);
+};
+
   if(isLoading) return <> 
   <div className="loader-container">
   <div class="loader"></div> 
@@ -37,9 +45,9 @@ useEffect(() => {
         <p><Count/></p>
     </div>
     <div class="div2"> 
-        <CommentForm/> </div>
+        <CommentForm articleId={article_id} addCommentOptimistically={addCommentOptimistically}/> </div>
     <div class="div3">
-        <GetComments />
+        <GetComments comments={comments}/>
     </div>
 </div>
   );
